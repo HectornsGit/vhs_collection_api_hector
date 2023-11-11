@@ -7,12 +7,12 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class HealthController extends AbstractController
+class WelcomeController extends AbstractController
 {
-    #[Route(path:"/welcome", name:"welcome", methods:["GET"])]
-    public function healthCheck(Request $request):Response
+    #[Route(path: "/welcome", name: "welcome", methods: ["GET"])]
+    public function welcoming(Request $request): Response
     {
-        $name= $request->query->get("name","Héctor");
-        return new Response("Welcome, ". $name. "!",Response::HTTP_ACCEPTED);
+        $name = $request->query->get("name", "Héctor");
+        return new Response("Welcome, " . $name . "!", Response::HTTP_OK);
     }
 }
