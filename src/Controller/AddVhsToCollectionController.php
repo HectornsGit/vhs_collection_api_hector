@@ -17,12 +17,14 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class AddVhsToCollectionController extends AbstractController
 {
-    #[Route('/collection', name: 'add_movie_to_collection', methods: ["POST"])]
+    #[Route('/collection/add', name: 'add_movie_to_collection', methods: ["POST"])]
     public function addVhsToCollection(Request $request, EntityManagerInterface $entityManager, HttpClientInterface $httpClient): Response
     {
         try {
-            $moviedbId = $request->get("moviedb_id");
-            $collectionName = $request->get("collection_name");
+            $requestData = json_decode($request->getContent())[0];
+
+            $moviedbId = $requestData->moviedb_id;
+            $collectionName = $requestData->collection;
 
             $movieInfo = fetchMovieFromMovieDbById($moviedbId, $httpClient);
             $originalTitle = $movieInfo->original_title;
