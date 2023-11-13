@@ -19,6 +19,9 @@ class Vhs
     #[ORM\Column]
     private ?int $moviedb_id = null;
 
+    #[ORM\Column(length: 100)]
+    private ?string $original_title = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Vhs
     public function setMoviedbId(int $moviedb_id): static
     {
         $this->moviedb_id = $moviedb_id;
+
+        return $this;
+    }
+
+    public function getOriginalTitle(): ?string
+    {
+        return $this->original_title;
+    }
+
+    public function setOriginalTitle(string $original_title): static
+    {
+        $this->original_title = $original_title;
 
         return $this;
     }
