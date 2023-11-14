@@ -2,7 +2,7 @@
 
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-function fetchMovieFromMovieDbById(int $moviedb_id, HttpClientInterface $httpClient): stdClass|string
+function fetchMovieFromMovieDbById(int $moviedb_id, HttpClientInterface $httpClient): array|string|stdClass
 {
 
     $apiToken = $_ENV["API_TOKEN"];
