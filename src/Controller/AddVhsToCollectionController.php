@@ -17,7 +17,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class AddVhsToCollectionController extends AbstractController
 {
-    #[Route('/collection/add', name: 'add_movie_to_collection', methods: ["POST"])]
+    #[Route('/collection/add', name: 'add_vhs_to_collection', methods: ["POST"])]
     public function addVhsToCollection(Request $request, EntityManagerInterface $entityManager, HttpClientInterface $httpClient): Response
     {
         try {
