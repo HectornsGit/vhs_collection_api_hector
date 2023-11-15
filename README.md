@@ -32,6 +32,8 @@ Obtains information about the films from https://www.themoviedb.org/
 
 - `vhs_collection` to the database name you want.
 
+- Fill the line `API_TOKEN=""` with a valid token from [moviedb](https://developer.themoviedb.org/docs) api
+
 5. Use doctrine to create the database: `php bin/console doctrine:database:create` if this doesn't work, first execute `php bin/console doctrine:database:drop` and then again try to create the table.
 
 6. Create the new database table using the doctrine migrations `php bin/console doctrine:migrations:migrate`
