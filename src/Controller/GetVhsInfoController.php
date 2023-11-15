@@ -32,7 +32,7 @@ class GetVhsInfoController extends AbstractController
 
             $vhsInformation =  fetchMovieFromMovieDbById($vhs->getMovieDbId(), $httpClient);
 
-            return new JsonResponse(["data" => $vhsInformation, "status" => Response::HTTP_OK], Response::HTTP_OK);
+            return new JsonResponse($vhsInformation, Response::HTTP_OK);
         } catch (\Exception $e) {
             return new JsonResponse(["error" => $e->getMessage(), "status" => $e->getCode()], $e->getCode());
         }
