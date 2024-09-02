@@ -44,7 +44,7 @@ Obtains information about the films from https://www.themoviedb.org/
 
 ## Health/Welcome
 
-Sends a personaliced welcoming message.
+Sends a custom welcoming message.
 
 ## Request
 
